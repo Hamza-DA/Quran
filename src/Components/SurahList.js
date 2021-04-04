@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import SurahNumber from './icons/SurahNumber'
+import IconNumber from './icons/IconNumber'
 
 const ListItem = styled.div`
     padding: 15px;
@@ -32,26 +32,6 @@ const ArabicType = styled.h4`
     color: #1F6266;
     margin: 0 !important;
 `
-const NumberHolder = styled.span`
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-`
-const NumberIcon = styled.span`
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-`
-const NumberText = styled.p`
-    position: absolute;
-    font-family: Nunito Sans;
-    font-style: normal;
-    font-weight: 800;
-    font-size: 14px;
-    line-height: 143.5%;
-    color: #4F4F4F;
-`
 const LatinName = styled.h5`
     font-family: Nunito Sans;
     font-style: normal;
@@ -80,14 +60,7 @@ function SurahList({latinName, arabicName, number, type, numberOfAyats}) {
     return(
         <>
         <ListItem>
-            <NumberHolder>
-                <NumberIcon>
-                    <SurahNumber />
-                </NumberIcon>
-
-                <NumberText>{number}</NumberText>
-            </NumberHolder>
-
+             <IconNumber number={number} />
             <Names>
                 <LatinType>
                     <LatinName>{latinName}</LatinName>

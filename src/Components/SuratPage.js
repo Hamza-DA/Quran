@@ -1,5 +1,6 @@
 import React,{useEffect, useState} from "react";
 import SurahList from './SurahList'
+import {Link} from 'react-router-dom'
 
 function SuratPage() {
     useEffect(() => {
@@ -11,13 +12,17 @@ function SuratPage() {
         const back = await call.json()
         setSurat(back.data)
     }
+    const mapSurat = Surat.map(e => {
+                return(
+                    <Link to={`/surat/${e.number}`}>
+                        <SurahList key={e.number} latinName={e.englishName} arabicName={e.name} number={e.number} type={e.revelationType} numberOfAyats={e.numberOfAyahs} />
+                    </Link>
+                )
+            })
     return(
         <>
-            {Surat.map(e => {
-                return(
-                    <SurahList latinName={e.englishName} arabicName={e.name} number={e.number} type={e.revelationType} numberOfAyats={e.numberOfAyahs} />
-                )
-            })}
+            {mapSurat}
+
         </>
     )
 }

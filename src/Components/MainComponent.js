@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './Header';
 import Home from './Home';
 import SuratPage from './SuratPage';
+import SurahRender from './SurahRender';
 import {Route, Switch} from 'react-router-dom'
 
 function MainComponent() {
@@ -11,7 +12,8 @@ function MainComponent() {
         <div>
 
             <Switch>
-                <Route path="/surat" component={SuratPage}></Route>
+                <Route path="/surat" exact component={SuratPage}></Route>
+                <Route path="/surat/:id" component={SurahRender}></Route>
                 <Route path='/' exact component={Home}></Route>
             </Switch>
         </div>
