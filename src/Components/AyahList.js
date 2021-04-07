@@ -15,7 +15,7 @@ const ListItem = styled.div`
     flex-direction: column;
     justify-content: end;
     text-align: right;
-    align-items: end;
+    align-items: flex-end;
 `
 const Text = styled.p`
     display: inline-block;
@@ -31,7 +31,7 @@ const NumberICN = styled.span`
     justify-content: center;
     background: #fff;
     padding: 5px;
-    margin: 0 0 20px 20px;
+    margin: 0 0 20px 15px;
     box-shadow: 0px 11px 19px rgba(0, 0, 0, 0.05);
     border-radius: 10px;
     height: 30px;
@@ -49,7 +49,7 @@ const ButtonICN = styled.button`
     justify-content: center;
     background: #fff;
     padding: 5px;
-    margin: 0 0 20px 20px;
+    margin: 0 0 20px 15px;
     box-shadow: 0px 11px 19px rgba(0, 0, 0, 0.05);
     border-radius: 10px;
     height: 30px;

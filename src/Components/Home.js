@@ -5,6 +5,8 @@ import Surah from './icons/Surah'
 import Quran from './icons/Quran'
 import Start from './icons/Start'
 import {Link} from 'react-router-dom'
+import Patterns from './icons/Patterns';
+
 
 const StartWrapper = styled.div`
     display: flex;
@@ -35,7 +37,8 @@ const WaveHolder = styled.span`
     left: ${props => props.posX};
     bottom: ${props => props.posY};
     overflow: hidden;
-    opacity: 0.7;
+    opacity: 0.5;
+    z-index: 2;
 `
 const FloatRight = styled.div`
     position: absolute;
@@ -73,6 +76,7 @@ const Home = () => {
             <GridWrapper>
                 <GridCard height={'150'} area={'1 / 1 / 2 / 3'} background={'81.24deg, #26B2AF 0%, #51E87E 100%'} >
                     <WaveHolder posX={'-30px'} posY={'-20px'}><Wave /></WaveHolder>
+                    <Patterns />
                     <FloatRight><Surah /></FloatRight>
                     <FloatLeft>
                         <Customh4>Surah of the day</Customh4>
@@ -80,12 +84,14 @@ const Home = () => {
                 </GridCard>
 
                 <GridCard height={'200'} area={'2 / 1 / 4 / 2'} background={'210.37deg, #CE7EB2 0%, #9D256E 100%'} >
-                    <WaveHolder posX={'-140px'} posY={'-20px'}><Wave /></WaveHolder>
+                <Patterns />
+                    <WaveHolder posX={'-100px'} posY={'-20px'}><Wave /></WaveHolder>
                 </GridCard>
 
                 <Link to="/surat">
                     <GridCard height={'200'} area={'2 / 2 / 4 / 3'} background={'210.37deg, #B383D1 0%, #7E25B6 100%'} >
-                        <WaveHolder posX={'-140px'} posY={'-20px'}><Wave /></WaveHolder>
+                    <Patterns />
+                        <WaveHolder posX={'-100px'} posY={'-20px'}><Wave /></WaveHolder>
                         <FloatRight><Quran /></FloatRight>
                         <FloatLeft>
                             <Customh4>Quran</Customh4>

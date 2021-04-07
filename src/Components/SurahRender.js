@@ -1,7 +1,7 @@
 import React,{useEffect, useState} from 'react';
 import SurahNameCard from './SurahNameCard';
 import AyahList from './AyahList';
-
+import Quba from './icons/Quba';
 
 function SurahRender({match}) {
     useEffect(() => {
@@ -17,13 +17,15 @@ function SurahRender({match}) {
 
     return(
         <>
-            <SurahNameCard props={Ayah} />
+        <SurahNameCard props={Ayah} /> 
             {Ayah.ayahs && Ayah.ayahs.map(e => {
                 return(
+                    <>
                     <AyahList props={e} />
+                    </>
                 )
             })}
-            {!Ayah.ayahs && <h1>loading</h1>}
+            {!Ayah.ayahs && <></>}
         </>
     )
 }
