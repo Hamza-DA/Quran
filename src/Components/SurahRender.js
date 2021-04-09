@@ -4,6 +4,7 @@ import AyahList from "./AyahList";
 import Quba from "./icons/Quba";
 import Loading from "./icons/Loading";
 import { motion } from "framer-motion";
+import Header from "./Header";
 
 function SurahRender({ match }) {
   useEffect(() => {
@@ -21,6 +22,7 @@ function SurahRender({ match }) {
 
   return (
     <>
+      <Header title={`${Ayah.englishName} ${Ayah.name}`} />
       {Ayah.ayahs && (
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
           <SurahNameCard props={Ayah} />
@@ -32,7 +34,10 @@ function SurahRender({ match }) {
             <>
               <motion.div
                 initial={{ opacity: 0 }}
-                animate={{ opacity: 1, transition: { delay: index * 0.02 } }}
+                animate={{
+                  opacity: 1,
+                  transition: { delay: index * 0.08, duration: 0.5 },
+                }}
               >
                 <AyahList props={e} />
               </motion.div>

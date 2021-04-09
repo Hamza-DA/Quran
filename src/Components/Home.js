@@ -6,6 +6,7 @@ import Quran from "./icons/Quran";
 import Start from "./icons/Start";
 import { Link } from "react-router-dom";
 import Patterns from "./icons/Patterns";
+import Header from "./Header";
 
 const StartWrapper = styled.div`
   display: flex;
@@ -68,6 +69,8 @@ const Customh6 = styled.h6`
 const Home = () => {
   return (
     <>
+      <Header />
+
       <StartWrapper>
         <Start />
       </StartWrapper>
